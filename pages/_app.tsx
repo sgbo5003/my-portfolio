@@ -4,7 +4,7 @@ import { ReactElement, ReactNode } from 'react';
 import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';
 import Image from 'next/image';
-import img1 from '../public/assets/images/앙코르솔루션_광고그룹.png';
+import img1 from '../public/assets/images/상준포트폴리오메인사진.png';
 import SpecialMenuComponent from '../components/header';
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
