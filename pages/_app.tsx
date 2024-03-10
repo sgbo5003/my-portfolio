@@ -4,7 +4,7 @@ import { ReactElement, ReactNode } from 'react';
 import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';
 import Image from 'next/image';
-import img1 from '../public/assets/images/상준포트폴리오메인사진.png';
+import img2 from '../public/assets/images/메인사진.png';
 import SpecialMenuComponent from '../components/header';
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   return (
     <div className="home_body">
       <div className="front_img">
-        <Image src={img1} alt="메인이미지" height="204" width="1080" />
+        <Image src={img2} alt="메인이미지" height="204" width="1080" />
       </div>
       <SpecialMenuComponent />
       <Component {...pageProps} />
