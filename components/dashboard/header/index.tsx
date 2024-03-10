@@ -136,7 +136,6 @@ const DashBoardHeader = (props: {
               className="form-control form-control-sm h-36 calendar_input"
               onClick={() => onCalendarInputClick()}
               value={reportDate[0].startDate + ' ~ ' + reportDate[0].endDate}
-              onChange={() => {}}
             />
             {showCalendar && (
               <div className="calendar_wrap">

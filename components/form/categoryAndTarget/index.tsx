@@ -4,9 +4,7 @@ import styles from '../categoryAndTarget/CategoryAndTarget.module.scss';
 import { AiFillHome } from 'react-icons/ai';
 import { BsFillCheckCircleFill, BsFillDisplayFill, BsFillHandIndexFill, BsFillPlayFill } from 'react-icons/bs';
 import { FaExchangeAlt } from 'react-icons/fa';
-import { IoInformationCircle } from 'react-icons/io5';
 import { RiVideoFill } from 'react-icons/ri';
-import CamaignGroupSaveButton from '../../button';
 import { selectItemType } from '../../../pages/form';
 // import CamaignGroupSaveButton from '../button';
 
@@ -20,7 +18,6 @@ const CategoryAndTarget = (props: {
   setCancelModalOn: Dispatch<SetStateAction<boolean>>;
   categoryCheckFlag: boolean;
   targetCheckFlag: boolean;
-  saveCampaign: () => void;
 }) => {
   const {
     categoryItems,
@@ -32,7 +29,6 @@ const CategoryAndTarget = (props: {
     setCancelModalOn,
     categoryCheckFlag,
     targetCheckFlag,
-    saveCampaign,
   } = props;
   const router = useRouter();
   const [guidCheck, setGuideCheck] = useState<string>(''); // 가이드 display check
@@ -364,12 +360,26 @@ const CategoryAndTarget = (props: {
           )}
         </div>
       </div>
-      <CamaignGroupSaveButton
+      {/* <CamaignGroupSaveButton
         title="캠페인 생성"
         type="button"
-        handleOnCancelBtnClick={() => {}}
-        handleOnCreateBtnClick={() => {}}
-      />
+        handleOnCancelBtnClick={() => {
+          console.log('123');
+        }}
+        handleOnCreateBtnClick={() => {
+          console.log('123');
+        }}
+      /> */}
+      <div className={styles.reform_page_btn}>
+        <div className={styles.inner_btn}>
+          <button type="button" className="btn_gb f-left" onClick={() => console.log('123')}>
+            <span className="inner_g">취소</span>
+          </button>
+          <button type="button" className="btn_gb gb_bl f-left m-l-10">
+            <span className="inner_g">캠페인 생성</span>
+          </button>
+        </div>
+      </div>
     </>
   );
 };

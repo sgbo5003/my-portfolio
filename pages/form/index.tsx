@@ -50,8 +50,6 @@ const FormPage = () => {
   const [categoryCheckFlag, setCategoryCheckFlag] = useState<boolean>(false); // 유형 검사 flag
   const [targetCheckFlag, setTargetCheckFlag] = useState<boolean>(false); // 목표 검사 flag
 
-  const saveCampaign = () => {};
-
   return (
     <div className="reform_wrap">
       <CategoryAndTarget
@@ -64,7 +62,6 @@ const FormPage = () => {
         setCancelModalOn={setCancelModalOn}
         categoryCheckFlag={categoryCheckFlag}
         targetCheckFlag={targetCheckFlag}
-        saveCampaign={saveCampaign}
       />
       <AdGroupPage />
     </div>

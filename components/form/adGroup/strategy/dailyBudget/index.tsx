@@ -85,11 +85,11 @@ const DailyBudget = (props: {
                   value={myForm.adGroup[adGroupIdx].dailyBudgetAmount.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
                   onChange={(e) => {
                     const { value } = e.target;
-                    let checkArr = value.split('.');
+                    const checkArr = value.split('.');
                     if (checkArr.length > 2) {
                       return;
                     }
-                    let pattern = /^\d*[.]\d{4}$/;
+                    const pattern = /^\d*[.]\d{4}$/;
                     if (pattern.test(value.replace(/,/g, ''))) {
                       return;
                     }
