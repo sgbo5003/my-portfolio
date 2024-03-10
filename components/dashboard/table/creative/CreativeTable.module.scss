@@ -1,0 +1,103 @@
+.inner_tbl {
+  padding: 12px !important;
+  line-height: 26px;
+  padding-left: 20px !important;
+  border-right: 1px solid #e2e5e8 !important;
+  // background-color: #fff !important;
+  &:last-child {
+    border-right: none !important;
+  }
+  .btn_dash {
+    position: absolute;
+    top: 40%;
+    right: 4px;
+    margin-top: -12px;
+    .link_modify {
+      display: none;
+      float: left;
+      .link_g {
+        width: 28px;
+        height: 28px;
+        padding: 3px 0 3px 5px;
+        svg {
+          color: rgb(145 144 144);
+        }
+        &:hover {
+          svg {
+            color: rgb(73 73 73);
+          }
+        }
+      }
+    }
+    .link_chart {
+      display: none;
+      float: left;
+      .link_g {
+        width: 28px;
+        height: 28px;
+        padding: 3px 0;
+        svg {
+          color: rgb(145 144 144);
+        }
+        &:hover {
+          svg {
+            color: rgb(73 73 73);
+          }
+        }
+      }
+    }
+    .link_chart.show {
+      display: block;
+    }
+  }
+}
+
+.link_thumb {
+  &:after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    content: '';
+  }
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  width: 40px;
+  height: 40px;
+  margin-top: -20px;
+  text-decoration: none;
+  background: #fff;
+}
+
+.txt_dash {
+  display: block;
+  overflow: hidden;
+  min-width: 5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.link_thumb + .txt_dash {
+  min-width: 59px;
+  margin-left: 52px;
+  margin-right: 53px;
+}
+
+tr.on {
+  td {
+    background-color: #f1f7ff !important;
+  }
+}
+
+.over {
+  td {
+    background-color: #f7f7f7 !important;
+  }
+  .link_chart,
+  .link_modify {
+    display: block !important;
+  }
+}

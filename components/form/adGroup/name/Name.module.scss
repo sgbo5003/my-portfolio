@@ -1,0 +1,23 @@
+.reform_area_adgroup {
+  position: relative;
+  padding-left: 25px;
+  border-top: 1px solid #eee;
+  background: #f5f5f5;
+  .reform_titbtn_adgroup {
+    position: absolute;
+    top: 8px;
+    right: 25px;
+  }
+  .reform_titbtn_adgroup + .reform_tit_adgroup {
+    line-height: 47px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #777;
+  }
+  .reform_tit_adgroup {
+    line-height: 47px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #777;
+  }
+}

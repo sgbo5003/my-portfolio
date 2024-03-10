@@ -1,0 +1,404 @@
+.adboardbox_wrap {
+  min-width: 1110px;
+  .adboardbox_top {
+    position: relative;
+    margin-top: 15px;
+    border: 1px solid #ddd;
+    background: #fff;
+    .btn_close {
+      position: absolute;
+      top: 3px;
+      right: 8px;
+      padding: 7px;
+    }
+  }
+  .boardbox_tit {
+    position: relative;
+    .tit_box {
+      display: block;
+      height: 50px;
+      padding-left: 20px;
+      line-height: 48px;
+      font-size: 16px;
+      font-weight: 700;
+      color: #111;
+      background: #fff;
+    }
+  }
+  .titcheck_box {
+    position: absolute;
+    top: 14px;
+    right: 54px;
+    .box_checkinp {
+      margin-left: 15px;
+    }
+  }
+
+  .adboardbox_search {
+    position: relative;
+    height: 60px;
+    // margin-top: 15px;
+    padding: 13px 10px 10px 20px;
+    border: 1px solid #ddd;
+    background: #fff;
+  }
+
+  .addashboard_box {
+    margin-top: 15px;
+    button {
+      height: 36px;
+    }
+    .tab_dashboard {
+      height: 49px;
+      li {
+        float: left;
+        position: relative;
+        width: 33.6%;
+        max-width: 490px;
+        height: 49px;
+        margin: 0;
+        &:first-child {
+          width: 32.8%;
+          max-width: 480px;
+        }
+      }
+      .on {
+        .link_tab {
+          box-sizing: content-box !important;
+          position: relative;
+          z-index: 1;
+          background-color: #fff;
+          color: #000;
+          padding: 0 18px;
+          border-radius: 0;
+          font-size: 16px;
+          font-weight: 700;
+          letter-spacing: 0;
+          display: block;
+          height: 48px;
+          border: 1px solid #ddd;
+          line-height: 46px;
+          text-align: center;
+          border-color: #ddd;
+          border-bottom-color: #fff;
+          text-align: left;
+        }
+      }
+      .link_tab {
+        box-sizing: content-box !important;
+        padding: 0 18px;
+        border-radius: 0;
+        background-color: #f5f5f5;
+        font-size: 16px;
+        font-weight: 700;
+        color: #777;
+        letter-spacing: 0;
+        display: block;
+        height: 48px;
+        border: 1px solid #ddd;
+        line-height: 46px;
+        text-align: center;
+        border-color: #ddd;
+        text-align: left;
+      }
+      .btn_tabnum {
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        z-index: 10;
+        height: 28px;
+        padding: 0 24px 0 10px;
+        border-radius: 2px;
+        border: 1px solid #326edc;
+        line-height: 27px;
+        font-size: 13px;
+        font-weight: 700;
+        color: #326edc;
+        background: #f1f6ff;
+        text-decoration: none;
+        .ico_comm {
+          position: absolute;
+          top: -1px;
+          right: 4px;
+        }
+      }
+    }
+  }
+  .set_table {
+    border: 1px solid #ddd;
+    background-color: #fff;
+    box-sizing: content-box !important;
+    .set_head {
+      padding: 7px 19px;
+      height: 36px;
+      box-sizing: content-box !important;
+      .single_wrap {
+        margin-left: 10px;
+        float: left;
+        &:first-child {
+          margin-left: 0px;
+        }
+        .couple_btn {
+          display: inline-block;
+          vertical-align: top;
+          button {
+            margin-left: -1px;
+            span {
+              padding: 7px 15px 8px;
+            }
+          }
+          &:after {
+            display: block;
+            visibility: hidden;
+            height: 0;
+            font-size: 0;
+            clear: both;
+            content: '';
+          }
+        }
+        .opt_select {
+          min-width: 148px;
+          display: inline-block;
+          position: relative;
+          max-width: 440px;
+          border: 1px solid #ddd;
+          border-radius: 2px;
+          font-weight: 400;
+          font-size: 13px;
+          color: #333;
+          background: #fff;
+          vertical-align: top;
+          .link_selected {
+            display: block;
+            overflow: hidden;
+            min-height: 34px;
+            padding: 7px 30px 8px 15px;
+            border-radius: 2px;
+            line-height: 19px;
+            color: #333;
+            background: #fff;
+            text-align: left;
+            text-decoration: none;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            letter-spacing: -1px;
+            box-sizing: border-box;
+          }
+          .ico_arr {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            width: 0;
+            height: 0;
+            margin-top: -3px;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-top: 5px solid #555;
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+  }
+}
+
+.boardbox_card.card_info {
+  padding: 0 0 20px 20px;
+  border-top: 1px solid #eee;
+}
+
+.boardbox_card {
+  &:after {
+    display: block;
+    visibility: hidden;
+    height: 0;
+    font-size: 0;
+    clear: both;
+    content: '';
+  }
+  position: relative;
+  .item_infosum {
+    &:last-child {
+      padding-right: 0;
+    }
+    float: left;
+    margin: 17px 20px 0 0;
+    .list_infosum {
+      &:after {
+        position: absolute;
+        top: 5px;
+        right: 0;
+        width: 1px;
+        height: 34px;
+        background: #eeeeee;
+        content: '';
+      }
+    }
+    .subtit_g {
+      font-size: 12px;
+      line-height: 20px;
+      color: #999;
+      .btn_more {
+        display: inline-block;
+        width: 19px;
+        vertical-align: top;
+      }
+    }
+    .desc_g {
+      font-size: 13px;
+      line-height: 20px;
+      color: #333;
+    }
+  }
+  .tit_g {
+    float: left;
+    padding: 1px 22px 0 0;
+    line-height: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #111;
+  }
+  .list_infosum {
+    float: left;
+    li {
+      float: left;
+      min-width: 46px;
+      padding-right: 20px;
+    }
+  }
+  .loading_bubble {
+    position: absolute;
+    top: 28%;
+    left: 50%;
+  }
+}
+
+.boardbox_card.card_graph {
+  border-top: 1px solid #eee;
+  .boxcard_select {
+    position: relative;
+    text-align: right;
+    padding: 20px 10px 30px 10px;
+    border-bottom: none;
+  }
+  .graph_wrap {
+    height: auto;
+    padding: 0 40px 23px 40px;
+  }
+}
+
+.card_graph {
+  .detail_graph {
+    height: 100%;
+  }
+  .boxcard_select {
+    min-height: 30px;
+    padding: 15px 20px 20px;
+    border-bottom: 1px solid transparent;
+    .sub_boxcard {
+      display: none;
+      overflow-y: auto;
+      position: absolute;
+      top: -8px;
+      left: 200px;
+      min-width: 126px;
+      max-height: 498px;
+      padding: 8px 0;
+      margin-left: 10px;
+      background: #fff;
+      border-radius: 4px;
+      box-shadow: 0 2px 10px 0 rgb(0 0 0 / 25%);
+    }
+    .sub_listopt > li {
+      &:hover {
+        .sub_boxcard {
+          display: block;
+        }
+      }
+      &:hover > .link_option {
+        background-color: rgb(0, 0, 0, 0.03);
+      }
+    }
+  }
+  .opt_select {
+    width: 180px;
+    margin-right: 8px;
+    box-sizing: content-box !important;
+    &:last-child {
+      .sub_boxcard {
+        left: auto;
+        right: 200px;
+      }
+    }
+    .ico_on {
+      &::before {
+        width: 8px;
+        height: 8px;
+        background: #4dc6df;
+      }
+      width: 8px;
+      height: 8px;
+    }
+    .ico_on.on_b {
+      &::before {
+        background: #326edc;
+      }
+    }
+    .opt_list {
+      top: 38px;
+      z-index: 30;
+    }
+    .list_opt2 {
+      padding: 7px 0;
+      border-top: none;
+    }
+    .tit_option {
+      height: 29px;
+      line-height: 29px;
+      color: #999;
+      font-size: 13px;
+      font-weight: 400;
+      box-sizing: content-box !important;
+    }
+    .sub_listopt {
+      overflow: inherit;
+    }
+    .link_option.on {
+      color: #326edc;
+      background: #f1f6fc;
+    }
+    .link_option {
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.03);
+      }
+      height: 26px;
+      line-height: 26px;
+      font-size: 14px;
+      color: #333;
+    }
+    .list_opt {
+      li {
+        &::after {
+          position: absolute;
+          right: -10px;
+          top: 0;
+          width: 10px;
+          height: 100%;
+          content: '';
+        }
+      }
+    }
+  }
+  .link_selected {
+    min-height: 28px;
+    padding: 4px 10px 5px;
+    font-size: 11px;
+    color: #333;
+  }
+  .graph_wrap {
+    overflow: hidden;
+    position: relative;
+    height: 245px;
+    padding: 0 11px 0 10px;
+  }
+}

@@ -1,0 +1,24 @@
+.reform_btn_making {
+  display: block;
+  height: 18px;
+  text-align: left;
+  .btn_gb {
+    float: left;
+  }
+  .gb_bl {
+    position: absolute;
+    top: -17px;
+    left: 0;
+    height: 35px;
+    border: none;
+    color: #326edc;
+    line-height: 23px;
+    background: none;
+    .inner_g {
+      padding: 5px 10px 5px 10px;
+      line-height: 25px;
+      font-size: 14px;
+      font-weight: 400;
+    }
+  }
+}

@@ -1,0 +1,141 @@
+.modifybudget_wrap {
+  .layer_body {
+    padding: 26px 30px 30px;
+  }
+  .tbl_layer {
+    margin-top: 20px;
+    th {
+      vertical-align: middle;
+    }
+    .tr_box2 {
+      td {
+        .inner_cell {
+          padding-top: 25px;
+          padding-bottom: 25px;
+        }
+      }
+    }
+    .box_inptxt {
+      float: left;
+      width: 157px;
+    }
+  }
+  .box_btnnum {
+    margin-right: -30px;
+  }
+  .reform_txt_num {
+    min-width: 185px;
+    padding: 5px 0 0;
+    margin-bottom: -3px;
+    clear: both;
+    display: inline-block;
+    font-size: 12px;
+    line-height: 20px;
+    color: #555;
+    text-align: right;
+  }
+}
+
+.tbl_layer {
+  width: 100%;
+  margin-top: 5px;
+  border: 1px solid #ddd;
+  border-left: 0 none;
+  border-right: 0 none;
+  border-top: 0 none;
+  border-collapse: collapse;
+  text-align: left;
+  table-layout: fixed;
+  tr {
+    &:first-child {
+      th,
+      td {
+        border-top-color: #ddd;
+      }
+    }
+  }
+  .tr_box2 {
+    th {
+      vertical-align: middle;
+    }
+    td {
+      .inner_cell {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+    }
+  }
+  th {
+    padding: 15px 0 15px 19px;
+    border-top: 1px solid #e6e6e6;
+    line-height: 22px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #555;
+    background-color: #f5f5f5;
+    text-align: left;
+    vertical-align: middle;
+  }
+  td {
+    &:last-child {
+      border-right: none;
+    }
+    line-height: 22px;
+    border-top: 1px solid #eee;
+    border-right: 1px solid #eee;
+    color: #333;
+  }
+  .inner_cell {
+    &:after {
+      display: block;
+      visibility: hidden;
+      height: 0;
+      font-size: 0;
+      clear: both;
+      content: '';
+    }
+    padding: 13px 20px;
+    word-wrap: break-word;
+    word-break: break-all;
+  }
+  .wrap_selinp {
+    &:after {
+      display: block;
+      visibility: hidden;
+      height: 0;
+      font-size: 0;
+      clear: both;
+      content: '';
+    }
+    margin: -3px 0;
+    .box_radioinp {
+      &:first-child {
+        margin-left: 0;
+      }
+      float: left;
+      margin-left: 20px;
+    }
+  }
+  .box_radioinp {
+    height: 22px;
+    line-height: 20px;
+    vertical-align: top;
+    .lab_radio {
+      font-size: 13px;
+      color: #333;
+    }
+  }
+}
+
+.hide_caption {
+  overflow: hidden;
+  width: 1px;
+  font-size: 1px;
+  line-height: 0;
+  text-indent: -9999px;
+}
+
+.layer_foot {
+  padding: 0 30px 30px;
+  text-align: right;
+}

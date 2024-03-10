@@ -1,0 +1,47 @@
+.wrap_price {
+  position: relative;
+  float: left;
+  margin-right: 40px;
+  .tit_search {
+    float: left;
+    font-size: 13px;
+    font-weight: 400;
+    color: #999;
+    line-height: 20px;
+  }
+  .txt_search {
+    float: left;
+    padding-left: 6px;
+    font-size: 13px;
+    font-weight: 700;
+    color: #111;
+    line-height: 20px;
+  }
+  .link_account {
+    float: left;
+    padding-left: 20px;
+    font-size: 13px;
+    font-weight: 400;
+    color: #999;
+    line-height: 20px;
+    text-decoration: none;
+  }
+  &:after {
+    display: block;
+    visibility: hidden;
+    height: 0;
+    font-size: 0;
+    clear: both;
+    content: '';
+  }
+}
+.wrap_btn {
+  .wrap_btn_refresh {
+    float: left;
+    button {
+      width: 34px;
+      height: 34px;
+      margin-left: 10px;
+    }
+  }
+}
