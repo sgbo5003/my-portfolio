@@ -7,6 +7,7 @@ import { FaExchangeAlt } from 'react-icons/fa';
 import { IoInformationCircle } from 'react-icons/io5';
 import { RiVideoFill } from 'react-icons/ri';
 import CamaignGroupSaveButton from '../../button';
+import { selectItemType } from '../../../pages/form';
 // import CamaignGroupSaveButton from '../button';
 
 const CategoryAndTarget = (props: {
@@ -46,7 +47,6 @@ const CategoryAndTarget = (props: {
       description: `다양한 크리에이티브를 활용하여, 광고솔루션의 핵심 서비스, 주요 파트너 서비스를 중심으로 한 많은 지면에
       광고를 노출합니다. 광고주 최적의 오디언스를 찾아줄 다양한 타겟 옵션을 통하여 광고의 효율을 높일 수
       있습니다.`,
-      description: '설명1',
       platformAllTxt: `다음, 네트워크`,
       platformMobileTxt: `(모바일) 스토리, 서비스`,
       chargingTxt: `CPC, CPM, CPA`,

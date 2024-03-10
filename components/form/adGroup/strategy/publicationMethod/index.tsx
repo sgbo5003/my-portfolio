@@ -1,9 +1,8 @@
-import { MyFormValues } from '@components/ad/campaign_group/campaign';
-import { TargetResultType } from '@pages/ad/[adaccountId]/campaign_group';
 import { useState } from 'react';
 import { BiHelpCircle } from 'react-icons/bi';
 import styles from '../publicationMethod/PublicationMethod.module.scss';
-import * as fnc from '@utils/commonFunction';
+import * as fnc from '../../../../../utils/commonFunction';
+import { MyFormValues, TargetResultType } from '../..';
 
 const PublicationMethod = (props: {
   adGroupIdx: number;

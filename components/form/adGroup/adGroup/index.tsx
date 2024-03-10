@@ -7,6 +7,13 @@ import Name from '../name';
 import Modal from '../../../modal';
 import { addDays } from 'date-fns';
 import Swal from 'sweetalert2';
+import { DeviceResponseProps2, MediaResponseProps, MyFormValues, adGroupFormValues } from '..';
+import { FormikErrors } from 'formik';
+
+interface TargetResultType {
+  subTitle: string;
+  subIndex: string;
+}
 
 const AdGroup = (props: {
   categoryAndTargetResult: Array<TargetResultType>;

@@ -41,6 +41,20 @@ export interface MyFormValues {
   adGroup: adGroupFormValues[];
 }
 
+export interface MediaResponseProps {
+  id: number;
+  name: string;
+}
+export interface DeviceResponseProps2 {
+  id: number;
+  name: string;
+  type: string;
+}
+export interface TargetResultType {
+  subTitle: string;
+  subIndex: string;
+}
+
 const cellsItems: boolean[][] = [
   [false, false, false, false, false, false, false, false],
   [false, true, true, true, true, true, true, true], // 00시
@@ -160,52 +174,52 @@ const adGroupInitialValue: adGroupFormValues = {
 const adGroupValidationSchema = Yup.object({
   adGroup: Yup.array().of(
     Yup.object({
-      bidAmount: Yup.number()
-        .when('pacingType', (pacingType, schema) =>
-          schema.test({
-            test: (value: string) => {
-              if (pacingType === 'CPC') {
-                if (Number(value) >= 0.01 && Number(value) <= 100) {
-                  return true;
-                } else {
-                  return false;
-                }
-              } else if (pacingType === 'CPM') {
-                if (Number(value) >= 0.1 && Number(value) <= 100) {
-                  return true;
-                } else {
-                  return false;
-                }
-              }
-            },
-            message: pacingType === 'CPC' ? '0.01 이상 100 이하로 입력하세요.' : '0.1 이상 100 이하로 입력하세요.',
-          }),
-        )
-        .notRequired(),
+      // bidAmount: Yup.number()
+      //   .when('pacingType', (pacingType, schema) =>
+      //     schema.test({
+      //       test: (value: string) => {
+      //         if (pacingType === 'CPC') {
+      //           if (Number(value) >= 0.01 && Number(value) <= 100) {
+      //             return true;
+      //           } else {
+      //             return false;
+      //           }
+      //         } else if (pacingType === 'CPM') {
+      //           if (Number(value) >= 0.1 && Number(value) <= 100) {
+      //             return true;
+      //           } else {
+      //             return false;
+      //           }
+      //         }
+      //       },
+      //       message: pacingType === 'CPC' ? '0.01 이상 100 이하로 입력하세요.' : '0.1 이상 100 이하로 입력하세요.',
+      //     }),
+      //   )
+      //   .notRequired(),
       dailyBudgetAmount: Yup.number()
         .min(10, '10 이상 300,000 이하로 입력하세요.')
         .max(300000, '10 이상 300,000 이하로 입력하세요.')
         .required('예산을 입력하세요.'),
       adGroupName: Yup.string().max(50).required(),
-      adGroupStartDate: Yup.string()
-        .when('adGroupEndDate', (adGroupEndDate, schema) =>
-          schema.test({
-            test: (value: string) => {
-              if (adGroupEndDate != null) {
-                if (Number(value) > Number(adGroupEndDate)) {
-                  return false;
-                } else {
-                  return true;
-                }
-              } else {
-                return value;
-              }
-            },
-            message: '시작일은 종료일보다 앞서야 합니다.',
-          }),
-        )
-        .notRequired(),
-      adGroupEndDate: Yup.string().nullable(true),
+      // adGroupStartDate: Yup.string()
+      //   .when('adGroupEndDate', (adGroupEndDate, schema) =>
+      //     schema.test({
+      //       test: (value: string) => {
+      //         if (adGroupEndDate != null) {
+      //           if (Number(value) > Number(adGroupEndDate)) {
+      //             return false;
+      //           } else {
+      //             return true;
+      //           }
+      //         } else {
+      //           return value;
+      //         }
+      //       },
+      //       message: '시작일은 종료일보다 앞서야 합니다.',
+      //     }),
+      //   )
+      //   .notRequired(),
+      // adGroupEndDate: Yup.string().nullable(true),
     }),
   ),
 });

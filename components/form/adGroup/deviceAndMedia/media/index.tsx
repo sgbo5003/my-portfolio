@@ -1,15 +1,15 @@
 import { useRouter } from 'next/router';
 import { BsExclamationCircleFill } from 'react-icons/bs';
 import styles from '../media/Media.module.scss';
+import { MediaResponseProps, MyFormValues } from '../..';
 const Media = (props: {
   adGroupIdx: number;
   myForm: MyFormValues;
   handleChange: (e: React.ChangeEvent<any>) => void;
   setValues: (values: React.SetStateAction<MyFormValues>) => void;
   mediaData: Array<MediaResponseProps>;
-  adGroupUpdateDetailResponse: AdGroupUpdateDetailResponse | undefined;
 }) => {
-  const { adGroupIdx, myForm, handleChange, setValues, mediaData, adGroupUpdateDetailResponse } = props;
+  const { adGroupIdx, myForm, handleChange, setValues, mediaData } = props;
   const router = useRouter();
   const { campaignId, adGroupId } = router.query;
 
@@ -32,20 +32,11 @@ const Media = (props: {
                   onChange={(e) => {
                     handleChange(e);
                     setValues({
-                      campaign: { ...myForm.campaign },
                       adGroup: myForm.adGroup.map((item, idx) =>
                         idx == adGroupIdx ? { ...item, allMedia: e.target.value, mediaType: mediaData } : item,
                       ),
                     });
                   }}
-                  disabled={
-                    campaignId !== undefined &&
-                    adGroupId !== undefined &&
-                    (adGroupUpdateDetailResponse?.status === 'FINISHED' ||
-                      adGroupUpdateDetailResponse?.status === 'ADMIN_STOP')
-                      ? true
-                      : false
-                  }
                 />
                 <label htmlFor={`mediaAll_${adGroupIdx}`} className={styles.lab_check}>
                   가능한 모든 디바이스 노출
@@ -64,20 +55,11 @@ const Media = (props: {
                   onChange={(e) => {
                     handleChange(e);
                     setValues({
-                      campaign: { ...myForm.campaign },
                       adGroup: myForm.adGroup.map((item, idx) =>
                         idx == adGroupIdx ? { ...item, allMedia: e.target.value, mediaType: mediaData } : item,
                       ),
                     });
                   }}
-                  disabled={
-                    campaignId !== undefined &&
-                    adGroupId !== undefined &&
-                    (adGroupUpdateDetailResponse?.status === 'FINISHED' ||
-                      adGroupUpdateDetailResponse?.status === 'ADMIN_STOP')
-                      ? true
-                      : false
-                  }
                 />
                 <label htmlFor={`mediaDetail_${adGroupIdx}`} className={styles.lab_check}>
                   상세 설정
@@ -119,7 +101,6 @@ const Media = (props: {
                             });
                             const newArr2 = myForm.adGroup[adGroupIdx].mediaType.concat(newArr1);
                             setValues({
-                              campaign: { ...myForm.campaign },
                               adGroup: myForm.adGroup.map((item, idx) =>
                                 idx == adGroupIdx ? { ...item, mediaType: newArr2 } : item,
                               ),
@@ -131,22 +112,8 @@ const Media = (props: {
                             if (newArr.length == 0) {
                               return;
                             }
-                            setValues({
-                              campaign: { ...myForm.campaign },
-                              adGroup: myForm.adGroup.map((item, idx) =>
-                                idx == adGroupIdx ? { ...item, mediaType: newArr } : item,
-                              ),
-                            });
                           }
                         }}
-                        disabled={
-                          campaignId !== undefined &&
-                          adGroupId !== undefined &&
-                          (adGroupUpdateDetailResponse?.status === 'FINISHED' ||
-                            adGroupUpdateDetailResponse?.status === 'ADMIN_STOP')
-                            ? true
-                            : false
-                        }
                       />
                       <label htmlFor={`${mediaItem.name + '_' + adGroupIdx}`} className={styles.lab_check}>
                         {mediaItem.name}

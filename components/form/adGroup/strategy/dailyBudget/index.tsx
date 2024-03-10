@@ -4,6 +4,7 @@ import styles from '../dailyBudget/DailyBudget.module.scss';
 import * as fnc from '../../../../../utils/commonFunction';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
+import { MyFormValues, adGroupFormValues } from '../..';
 
 const DailyBudget = (props: {
   adGroupIdx: number;
@@ -94,7 +95,6 @@ const DailyBudget = (props: {
                     }
                     const onlyNumber = value.replace(/[^-\.0-9]/g, '');
                     setValues({
-                      campaign: { ...myForm.campaign },
                       adGroup: myForm.adGroup.map((item, idx) =>
                         idx == adGroupIdx ? { ...item, dailyBudgetAmount: onlyNumber.replace(/,/g, '') } : item,
                       ),

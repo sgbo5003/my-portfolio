@@ -1,4 +1,4 @@
-import { Cell, Row, TableNode } from '@table-library/react-table-library';
+import { Cell, Row, TableNode } from '@table-library/react-table-library/table';
 import styles from '../campaign/CampaignTable.module.scss';
 import * as fnc from '../../../../utils/commonFunction';
 import { Dispatch, SetStateAction } from 'react';
@@ -25,7 +25,7 @@ const CampaignTable = (props: {
   return (
     <Row
       item={item}
-      onMouseEnter={() => setHoverState(item.id)}
+      onMouseEnter={() => setHoverState(String(item.id))}
       onMouseLeave={() => setHoverState('')}
       className={
         (hoverState === item.id ? styles.over : '') +

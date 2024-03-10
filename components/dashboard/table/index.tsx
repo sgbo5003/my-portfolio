@@ -1,12 +1,19 @@
 import styles from '../table/DashBoardTable.module.scss';
 import styles2 from '../../../components/dashboard/table/campaign/CampaignTable.module.scss';
-import { Body, Cell, Header, HeaderCell, HeaderRow, Row, Table, TableNode } from '@table-library/react-table-library';
+import {
+  Body,
+  Cell,
+  Header,
+  HeaderCell,
+  HeaderRow,
+  Row,
+  Table,
+  TableNode,
+} from '@table-library/react-table-library/table';
 import { useRouter } from 'next/router';
 import React, { Dispatch, SetStateAction, useEffect, useState } from 'react';
 import { useTheme } from '@table-library/react-table-library/theme';
 import CampaignTable from './campaign';
-import AdGroupTable from './adGroup';
-import CreativeTable from './creative';
 import * as adFnc from '../../../utils/adFunction';
 import * as fnc from '../../../utils/commonFunction';
 import DashboardPaginationButton from '../../../components/common/paginationButton/dashboard';
@@ -281,7 +288,7 @@ const DashBoardTable = (props: {
                 }}
               >
                 <Table data={table == 'campaign' || table == undefined ? campiagnData : { nodes }} theme={theme}>
-                  {(tableList) => (
+                  {(tableList: any) => (
                     <>
                       <Header>
                         <HeaderRow className="border_bottom">
@@ -342,7 +349,7 @@ const DashBoardTable = (props: {
                         </HeaderRow>
                       </Header>
                       <Body>
-                        {tableList.map((item, idx) => {
+                        {tableList.map((item: any, idx: number) => {
                           if (idx === 0) {
                             const myIndicatorItems =
                               sessionStorage.getItem('myIndicatorItems') !== null
@@ -483,7 +490,7 @@ const DashBoardTable = (props: {
                           }
                         })}
 
-                        {tableList.map((item, idx) => {
+                        {tableList.map((item: any, idx: number) => {
                           if (table == 'campaign' || table == undefined) {
                             let adTypeAndGoalArr: string[] = [];
                             adTypeAndGoalArr = adFnc.adTypeAndGoalFnc(

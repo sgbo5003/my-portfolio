@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import { MdOutlineKeyboardArrowDown, MdOutlineKeyboardArrowUp } from 'react-icons/md';
 import styles from '../device/Device.module.scss';
+import { DeviceResponseProps2, MyFormValues } from '../..';
 
 interface InputProps {
   // checkbox, radio props
@@ -16,9 +17,8 @@ const Device = (props: {
   handleChange: (e: React.ChangeEvent<any>) => void;
   setValues: (values: React.SetStateAction<MyFormValues>) => void;
   deviceData: Array<DeviceResponseProps2>;
-  adGroupUpdateDetailResponse: AdGroupUpdateDetailResponse | undefined;
 }) => {
-  const { adGroupIdx, myForm, handleChange, setValues, deviceData, adGroupUpdateDetailResponse } = props;
+  const { adGroupIdx, myForm, handleChange, setValues, deviceData } = props;
   // 광고그룹 > 디바이스 > 디바이스 환경 설정 > display 관련
   const router = useRouter();
   const { campaignId, adGroupId } = router.query;
@@ -54,7 +54,6 @@ const Device = (props: {
                     onChange={(e) => {
                       handleChange(e);
                       setValues({
-                        campaign: { ...myForm.campaign },
                         adGroup: myForm.adGroup.map((item, idx) =>
                           idx == adGroupIdx
                             ? {
@@ -66,14 +65,6 @@ const Device = (props: {
                         ),
                       });
                     }}
-                    disabled={
-                      campaignId !== undefined &&
-                      adGroupId !== undefined &&
-                      (adGroupUpdateDetailResponse?.status === 'FINISHED' ||
-                        adGroupUpdateDetailResponse?.status === 'ADMIN_STOP')
-                        ? true
-                        : false
-                    }
                   />
                   <label htmlFor={`${deviceRadioItem.inputId + '_' + adGroupIdx}`} className={styles.lab_check}>
                     {deviceRadioItem.label}
@@ -108,7 +99,6 @@ const Device = (props: {
                               });
                               const newArr2 = myForm.adGroup[adGroupIdx].deviceType.concat(newArr1);
                               setValues({
-                                campaign: { ...myForm.campaign },
                                 adGroup: myForm.adGroup.map((item, idx) =>
                                   idx == adGroupIdx ? { ...item, deviceType: newArr2 } : item,
                                 ),
@@ -121,21 +111,12 @@ const Device = (props: {
                                 return;
                               }
                               setValues({
-                                campaign: { ...myForm.campaign },
                                 adGroup: myForm.adGroup.map((item, idx) =>
                                   idx == adGroupIdx ? { ...item, deviceType: newArr } : item,
                                 ),
                               });
                             }
                           }}
-                          disabled={
-                            campaignId !== undefined &&
-                            adGroupId !== undefined &&
-                            (adGroupUpdateDetailResponse?.status === 'FINISHED' ||
-                              adGroupUpdateDetailResponse?.status === 'ADMIN_STOP')
-                              ? true
-                              : false
-                          }
                         />
                         <label htmlFor={`${deviceItem.inputId + '_' + adGroupIdx}`} className={styles.lab_check}>
                           {deviceItem.label}
@@ -170,7 +151,6 @@ const Device = (props: {
                                             });
                                             const newArr2 = myForm.adGroup[adGroupIdx].deviceType.concat(newArr1);
                                             setValues({
-                                              campaign: { ...myForm.campaign },
                                               adGroup: myForm.adGroup.map((item, idx) =>
                                                 idx == adGroupIdx ? { ...item, deviceType: newArr2 } : item,
                                               ),
@@ -183,21 +163,12 @@ const Device = (props: {
                                               return;
                                             }
                                             setValues({
-                                              campaign: { ...myForm.campaign },
                                               adGroup: myForm.adGroup.map((item, idx) =>
                                                 idx == adGroupIdx ? { ...item, deviceType: newArr } : item,
                                               ),
                                             });
                                           }
                                         }}
-                                        disabled={
-                                          campaignId !== undefined &&
-                                          adGroupId !== undefined &&
-                                          (adGroupUpdateDetailResponse?.status === 'FINISHED' ||
-                                            adGroupUpdateDetailResponse?.status === 'ADMIN_STOP')
-                                            ? true
-                                            : false
-                                        }
                                       />
                                       <label
                                         htmlFor={`${deviceDataItem.name + '_' + adGroupIdx}`}

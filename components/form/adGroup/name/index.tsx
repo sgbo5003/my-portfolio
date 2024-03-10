@@ -1,6 +1,7 @@
 import { FormikErrors } from 'formik';
 import styles from '../name/Name.module.scss';
 import AdGroupName from './adGroupName';
+import { MyFormValues } from '..';
 
 const Name = (props: {
   adGroupIdx: number;

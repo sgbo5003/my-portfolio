@@ -6,6 +6,40 @@ import { ResponsiveContainer, XAxis, YAxis, CartesianGrid, Tooltip, AreaChart, A
 import * as fnc from '../../../utils/commonFunction';
 import ReactLoading from 'react-loading';
 
+interface ChartResponse {
+  reportDate: number;
+  report: {
+    cost: number;
+    impression: number;
+    click: number;
+    reach: number;
+    videoAutoPlay: number;
+    videoTouches: number;
+    videoUnmute: number;
+    videoPlay3Seconds: number;
+    videoPlay5Seconds: number;
+    videoPlay10Seconds: number;
+    videoPlay15Seconds: number;
+    videoPlay30Seconds: number;
+    videoPlay60Seconds: number;
+    videoPlay25Percent: number;
+    videoPlay50Percent: number;
+    videoPlay75Percent: number;
+    videoPlay100Percent: number;
+    signUpDay1: number;
+    signUpDay7: number;
+    purchaseDay1: number;
+    purchaseDay7: number;
+    viewCartDay1: number;
+    viewCartDay7: number;
+    ctr: number;
+    cpm: number;
+    cpc: number;
+    reachRate: number;
+    videoPlayRate: number;
+  };
+}
+
 const chartSelectOptions = [
   {
     groupName: '비용 지표',

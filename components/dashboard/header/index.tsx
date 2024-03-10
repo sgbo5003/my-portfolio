@@ -2,13 +2,12 @@ import { BiHelpCircle } from 'react-icons/bi';
 import { BsFillBarChartFill } from 'react-icons/bs';
 import { TbRefresh } from 'react-icons/tb';
 import { IoInformationCircle } from 'react-icons/io5';
-import Filter from '@components/adFilter';
+import Filter from '../../../components/adFilter';
 import { useState, useRef, useCallback, useEffect, Dispatch, SetStateAction } from 'react';
-import * as fnc from '@utils/commonFunction';
+import * as fnc from '../../../utils/commonFunction';
 import { DateRangePicker, Range } from 'react-date-range';
 import { subDays } from 'date-fns';
 import { useRouter } from 'next/router';
-import { useTranslation } from 'next-i18next';
 
 const DashBoardHeader = (props: {
   rangeDate: Range[];
@@ -46,7 +45,6 @@ const DashBoardHeader = (props: {
   const { table, summary, adaccountId } = router.query;
   const calendarInputDivRef = useRef<HTMLDivElement>(null);
   const [showCalendar, setShowCalendar] = useState<boolean>(false);
-  const { t } = useTranslation(['common', 'dashboard']);
 
   const onCalendarInputClick = (): void => {
     setShowCalendar(true);
@@ -83,7 +81,6 @@ const DashBoardHeader = (props: {
     <div className="inner_g">
       <div className="wrap_price">
         <strong className="tit_search">
-          {t('dashboard:header.spendTitle')}
           {/* <span>
             <a className="link_g m-b-4">
               <BiHelpCircle />
@@ -125,7 +122,6 @@ const DashBoardHeader = (props: {
             }
           }}
         >
-          {t('common:adAccount')}
           <span className="m-l-5">
             <BsFillBarChartFill color={summary === 'ad_account' ? '#4884f1' : ''} />
           </span>
@@ -151,9 +147,7 @@ const DashBoardHeader = (props: {
                   direction="horizontal"
                 />
                 <div className="calendar_btn_wrap">
-                  <button type="button" className="btn_gm gm_bl" onClick={() => setShowCalendar(false)}>
-                    <span className="inner_g">{t('common:cancel')}</span>
-                  </button>
+                  <button type="button" className="btn_gm gm_bl" onClick={() => setShowCalendar(false)}></button>
                   <button
                     type="button"
                     className="btn_gm m-l-10"
@@ -166,9 +160,7 @@ const DashBoardHeader = (props: {
                       ]);
                       setShowCalendar(false);
                     }}
-                  >
-                    <span className="inner_g">{t('common:apply')}</span>
-                  </button>
+                  ></button>
                 </div>
               </div>
             )}

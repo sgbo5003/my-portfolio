@@ -5,6 +5,7 @@ import BiddingMethod from './biddingMethod';
 import DailyBudget from './dailyBudget';
 import PublicationMethod from './publicationMethod';
 import Schedule from './schedule';
+import { MyFormValues, TargetResultType } from '..';
 
 const Strategy = (props: {
   adGroupIdx: number;

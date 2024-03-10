@@ -1,4 +1,4 @@
-import { HeaderColumnsType } from '@components/dashboard/table';
+import { HeaderColumnsType } from '../../../components/dashboard/table';
 
 export const indicatorItems: HeaderColumnsType[] = [
   {

@@ -4,7 +4,7 @@ import { useState } from 'react';
 import UserTableColumnSettingComponent from '../../components/userTableColumnSetting';
 import { indicatorItems } from '../../components/dashboard/items/IndicatorItems';
 import css from 'styled-jsx/css';
-import DashBoardTable from '../../components/dashboard/table';
+import DashBoardTable, { HeaderColumnsType } from '../../components/dashboard/table';
 import * as fnc from '../../utils/commonFunction';
 import { subDays } from 'date-fns';
 import { useRouter } from 'next/router';
@@ -186,6 +186,11 @@ const initData = {
   },
   totalCount: 0,
 };
+
+interface groupColumnObj {
+  column_group_name: string;
+  column_group_no: number;
+}
 
 const DashboardPage = () => {
   const router = useRouter();

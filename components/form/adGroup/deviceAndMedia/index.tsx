@@ -1,3 +1,4 @@
+import { DeviceResponseProps2, MediaResponseProps, MyFormValues } from '..';
 import styles from '../deviceAndMedia/DeviceAndMedia.module.scss';
 import Device from './device';
 import Media from './media';

@@ -4,6 +4,7 @@ import styles from '../biddingMethod/BiddingMethod.module.scss';
 import * as fnc from '../../../../../utils/commonFunction';
 import { useState } from 'react';
 import { useRouter } from 'next/router';
+import { MyFormValues, TargetResultType, adGroupFormValues } from '../..';
 
 const BiddingMethod = (props: {
   adGroupIdx: number;
@@ -12,7 +13,6 @@ const BiddingMethod = (props: {
   setValues: (values: React.SetStateAction<MyFormValues>) => void;
   categoryAndTargetResult: Array<TargetResultType>;
   errors: FormikErrors<MyFormValues>;
-  adGroupUpdateDetailResponse: AdGroupUpdateDetailResponse | undefined;
 }) => {
   const { adGroupIdx, myForm, handleChange, setValues, categoryAndTargetResult, errors } = props;
   const router = useRouter();
@@ -224,7 +224,6 @@ const BiddingMethod = (props: {
                               checked={myForm.adGroup[adGroupIdx].pacingType == 'CPC' ? true : false}
                               onChange={(e) => {
                                 setValues({
-                                  campaign: { ...myForm.campaign },
                                   adGroup: myForm.adGroup.map((item, idx) =>
                                     idx == adGroupIdx
                                       ? { ...item, bidAmount: '0.150', pacingType: e.target.value }
@@ -261,7 +260,6 @@ const BiddingMethod = (props: {
                               checked={myForm.adGroup[adGroupIdx].pacingType == 'CPM' ? true : false}
                               onChange={(e) => {
                                 setValues({
-                                  campaign: { ...myForm.campaign },
                                   adGroup: myForm.adGroup.map((item, idx) =>
                                     idx == adGroupIdx
                                       ? { ...item, bidAmount: '1.000', pacingType: e.target.value }
@@ -331,7 +329,6 @@ const BiddingMethod = (props: {
                                 }
                                 const onlyNumber = value.replace(/[^-\.0-9]/g, '');
                                 setValues({
-                                  campaign: { ...myForm.campaign },
                                   adGroup: myForm.adGroup.map((item, idx) =>
                                     idx == adGroupIdx ? { ...item, bidAmount: onlyNumber.replace(/,/g, '') } : item,
                                   ),

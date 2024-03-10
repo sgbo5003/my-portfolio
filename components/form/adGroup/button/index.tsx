@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 import { Dispatch, SetStateAction } from 'react';
 import { AiFillPlusCircle } from 'react-icons/ai';
 import styles from '../button/AdGroupButton.module.scss';
+import { MyFormValues, adGroupFormValues } from '..';
 const AdGroupButton = (props: {
   setCancelModalOn: Dispatch<SetStateAction<boolean>>;
   push: (obj: any) => void;
