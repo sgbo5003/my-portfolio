@@ -14,6 +14,7 @@
       min-height: 36px;
       .tit_dsp {
         .reform_tit_subject {
+          position: absolute;
           float: left;
           font-size: 16px;
           font-weight: 700;
@@ -21,7 +22,9 @@
           color: #111;
         }
         .tit_delbtn {
-          position: relative;
+          // position: relative;
+          position: absolute;
+          left: 105px;
           float: left;
           width: 26px;
           .btn_making_del2 {

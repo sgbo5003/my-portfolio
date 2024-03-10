@@ -68,16 +68,6 @@ const AdGroup = (props: {
               </a>
             </div>
           </div>
-          {/* {!adGroupDisplay.includes(adGroupIdx) && (
-                        <div className={styles.f_right + (adGroupId !== undefined ? ' ' + styles.nobtn : '')}>
-                          <a href="#!" className={styles.link_help5}>
-                            <span className={styles.ico_comm}>
-                              <IoInformationCircle size={20} className="m-r-3" />
-                            </span>
-                            도움말
-                          </a>
-                        </div>
-                      )} */}
         </div>
 
         <div
@@ -162,7 +152,7 @@ const AdGroup = (props: {
             type="button"
             className="btn_gm gm_bl m-l-10"
             onClick={() => {
-              if (adGroupIdx == 0) {
+              if (myForm.adGroup.length < 2) {
                 const Toast = Swal.mixin({
                   toast: true,
                   position: 'bottom-right',
