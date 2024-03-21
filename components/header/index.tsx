@@ -24,6 +24,15 @@ const SpecialMenuComponent = () => {
             폼
           </a>
         </li>
+        <li>
+          <a
+            onClick={() => {
+              router.push('/report');
+            }}
+          >
+            리포트
+          </a>
+        </li>
       </ul>
     </div>
   );
