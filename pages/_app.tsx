@@ -5,6 +5,7 @@ import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';
 import { LayoutProvider, LayoutSplashScreen } from '../angkor/layout/core';
 import { AuthInit, AuthProvider } from '../components/auth';
+import { Analytics } from '@vercel/analytics/react';
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -22,6 +23,7 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
       <AuthProvider>
         <LayoutProvider>
           <AuthInit>
+            <Analytics />
             <Component {...pageProps} />
           </AuthInit>
         </LayoutProvider>

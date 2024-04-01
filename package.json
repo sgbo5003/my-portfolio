@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@table-library/react-table-library": "^4.1.7",
+    "@vercel/analytics": "^1.2.2",
     "axios": "^1.6.8",
     "bootstrap": "^5.3.3",
     "clone": "^2.1.2",
