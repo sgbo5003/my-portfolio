@@ -1,1 +1,1 @@
-export const toAbsoluteUrl = (pathname: string) => 'http://localhost:3000' + pathname;
+export const toAbsoluteUrl = (pathname: string) => process.env.NEXT_PUBLIC_URL + pathname;
