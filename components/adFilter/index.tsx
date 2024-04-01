@@ -500,47 +500,53 @@ const Filter = () => {
       if (filterSearchSpanRef && !filterSearchSpanRef.current?.contains(e.target)) {
         setFilterSearchInpFocus(false);
       } else {
-        console.log(
-          'filterSearchSpanRef.current?.getBoundingClientRect().top',
-          filterSearchSpanRef.current?.getBoundingClientRect().top,
-        );
         // 조건에 filterSearchSpanRef.current?.getBoundingClientRect().top 앞에 위치한 것들은 모바일 크기 기준 (사이드바 형태가 바뀌었을때)
-        // if (
-        //   filterSearchSpanRef.current?.getBoundingClientRect().top === 112 ||
-        //   filterSearchSpanRef.current?.getBoundingClientRect().top === 132
-        // ) {
-        //   setFilterHeight(47);
-        // } else if (
-        //   filterSearchSpanRef.current?.getBoundingClientRect().top === 146 ||
-        //   filterSearchSpanRef.current?.getBoundingClientRect().top === 166
-        // ) {
-        //   setFilterHeight(84);
-        // } else if (
-        //   filterSearchSpanRef.current?.getBoundingClientRect().top === 180 ||
-        //   filterSearchSpanRef.current?.getBoundingClientRect().top === 200
-        // ) {
-        //   setFilterHeight(121);
-        // } else if (
-        //   filterSearchSpanRef.current?.getBoundingClientRect().top === 214 ||
-        //   filterSearchSpanRef.current?.getBoundingClientRect().top === 234
-        // ) {
-        //   setFilterHeight(158);
-        // } else if (
-        //   filterSearchSpanRef.current?.getBoundingClientRect().top === 248 ||
-        //   filterSearchSpanRef.current?.getBoundingClientRect().top === 268
-        // ) {
-        //   setFilterHeight(195);
-        // } else if (
-        //   filterSearchSpanRef.current?.getBoundingClientRect().top === 282 ||
-        //   filterSearchSpanRef.current?.getBoundingClientRect().top === 302
-        // ) {
-        //   setFilterHeight(232);
-        // }
+        if (
+          filterSearchSpanRef.current?.getBoundingClientRect().top === 112 ||
+          filterSearchSpanRef.current?.getBoundingClientRect().top === 132
+        ) {
+          setFilterHeight(47);
+        } else if (
+          filterSearchSpanRef.current?.getBoundingClientRect().top === 146 ||
+          filterSearchSpanRef.current?.getBoundingClientRect().top === 166
+        ) {
+          setFilterHeight(84);
+        } else if (
+          filterSearchSpanRef.current?.getBoundingClientRect().top === 180 ||
+          filterSearchSpanRef.current?.getBoundingClientRect().top === 200
+        ) {
+          setFilterHeight(121);
+        } else if (
+          filterSearchSpanRef.current?.getBoundingClientRect().top === 214 ||
+          filterSearchSpanRef.current?.getBoundingClientRect().top === 234
+        ) {
+          setFilterHeight(158);
+        } else if (
+          filterSearchSpanRef.current?.getBoundingClientRect().top === 248 ||
+          filterSearchSpanRef.current?.getBoundingClientRect().top === 268
+        ) {
+          setFilterHeight(195);
+        } else if (
+          filterSearchSpanRef.current?.getBoundingClientRect().top === 282 ||
+          filterSearchSpanRef.current?.getBoundingClientRect().top === 302
+        ) {
+          setFilterHeight(232);
+        }
         if (filterSearchSpanRef.current?.getBoundingClientRect().left !== undefined) {
           setFilterWidth(
-            filterSearchSpanRef.current?.getBoundingClientRect().left - (document.body.clientWidth - 1080) / 2,
+            filterSearchSpanRef.current?.getBoundingClientRect().left -
+              (document.body.clientWidth <= 991
+                ? 19
+                : document.body.getAttribute('data-app-sidebar-minimize') === null
+                ? 240
+                : 104),
           );
         }
+        // if (filterSearchSpanRef.current?.getBoundingClientRect().left !== undefined) {
+        //   setFilterWidth(
+        //     filterSearchSpanRef.current?.getBoundingClientRect().left - (document.body.clientWidth - 1080) / 2,
+        //   );
+        // }
       }
     }
     if (filterSelectRef && !filterSelectRef.current?.contains(e.target)) {

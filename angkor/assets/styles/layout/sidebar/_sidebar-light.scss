@@ -1,0 +1,79 @@
+//
+// Light Sidebar(used by Light Sidebar layout only)
+//
+
+[data-app-layout='light-sidebar'] {
+  .app-sidebar {
+    background-color: var(--app-sidebar-light-bg-color);
+    border-right: 0 !important;
+
+    .hover-scroll-overlay-y {
+      @include scrollbar-color(
+        var(--app-sidebar-light-scrollbar-color),
+        var(--app-sidebar-light-scrollbar-color-hover)
+      );
+    }
+
+    .app-sidebar-logo {
+      border-bottom: 1px solid var(--app-sidebar-light-separator-color);
+    }
+
+    .menu {
+      font-weight: $font-weight-semibold;
+
+      .menu-item {
+        .menu-heading {
+          color: var(--app-sidebar-light-menu-heading-color) !important;
+        }
+
+        @include menu-link-default-state(
+          $title-color: var(--gray-700),
+          $icon-color: var(--gray-500),
+          $bullet-color: var(--gray-500),
+          $arrow-color: var(--gray-500),
+          $bg-color: null
+        );
+
+        @include menu-link-hover-state(
+          $title-color: var(--gray-900),
+          $icon-color: var(--gray-700),
+          $bullet-color: var(--gray-700),
+          $arrow-color: var(--gray-700),
+          $bg-color: null
+        );
+
+        @include menu-link-show-state(
+          $title-color: var(--gray-900),
+          $icon-color: var(--gray-700),
+          $bullet-color: var(--gray-700),
+          $arrow-color: var(--gray-700),
+          $bg-color: null
+        );
+
+        @include menu-link-here-state(
+          $title-color: var(--gray-900),
+          $icon-color: var(--gray-700),
+          $bullet-color: var(--gray-700),
+          $arrow-color: var(--gray-700),
+          $bg-color: null
+        );
+
+        @include menu-link-active-state(
+          $title-color: var(--primary),
+          $icon-color: var(--primary),
+          $bullet-color: var(--primary),
+          $arrow-color: var(--primary),
+          $bg-color: var(--app-sidebar-light-menu-link-bg-color-active)
+        );
+      }
+    }
+  }
+}
+
+[data-app-layout='light-sidebar'][data-app-header-fixed='true'] {
+  .app-sidebar {
+    .app-sidebar-logo {
+      border-bottom: 1px dashed var(--app-sidebar-light-separator-color);
+    }
+  }
+}

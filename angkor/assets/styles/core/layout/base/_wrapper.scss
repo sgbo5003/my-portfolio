@@ -1,0 +1,89 @@
+//
+// Wrapper
+//
+
+// General mode
+.app-wrapper {
+  display: flex;
+}
+
+// Desktop mode
+@include media-breakpoint-up(lg) {
+  // Integration
+  .app-wrapper {
+    transition: $app-wrapper-transition;
+
+    // Header
+    [data-app-header-sticky='on'] & {
+      margin-top: var(--app-header-height-actual);
+    }
+
+    [data-app-header-fixed='true'] & {
+      margin-top: var(--app-header-height);
+    }
+
+    // Toolbar
+    [data-app-toolbar-sticky='on'] & {
+      margin-top: var(--app-toolbar-height-actual, 0px);
+    }
+
+    [data-app-header-fixed='true'][data-app-toolbar-sticky='on'] & {
+      margin-top: calc(var(--app-header-height-actual) + var(--app-toolbar-height-actual, 0px));
+    }
+
+    [data-app-header-fixed='true'][data-app-toolbar-fixed='true'] & {
+      margin-top: calc(var(--app-header-height) + var(--app-toolbar-height, 0px));
+    }
+
+    // Sidebar
+    [data-app-sidebar-fixed='true'] & {
+      margin-left: calc(var(--app-sidebar-width) + var(--app-sidebar-gap-start, 0px) + var(--app-sidebar-gap-end, 0px));
+    }
+
+    // Sidebar Panel
+    [data-app-sidebar-panel-fixed='true'] & {
+      margin-left: calc(
+        var(--app-sidebar-width) + var(--app-sidebar-gap-start, 0px) + var(--app-sidebar-gap-end, 0px) +
+          var(--app-sidebar-panel-width) + var(--app-sidebar-panel-gap-start, 0px) +
+          var(--app-sidebar-panel-gap-end, 0px)
+      );
+    }
+
+    // Aside
+    [data-app-aside-fixed='true'] & {
+      margin-right: calc(var(--app-aside-width) + var(--app-aside-gap-start, 0px) + var(--app-aside-gap-end, 0px));
+    }
+
+    // Footer
+    [data-app-footer-fixed='true'] & {
+      margin-bottom: var(--app-footer-height);
+    }
+  }
+}
+
+// Tablet & mobile modes
+@include media-breakpoint-down(lg) {
+  // Integration
+  .app-wrapper {
+    transition: $app-wrapper-transition;
+
+    // Header
+    [data-app-header-sticky-mobile='on'] & {
+      margin-top: var(--app-header-height-actual);
+    }
+
+    [data-app-header-fixed-mobile='true'] & {
+      margin-top: var(--app-header-height);
+    }
+
+    // Toolbar
+    [data-app-header-fixed-mobile='true'][data-app-toolbar-sticky-mobile='on'] & {
+      margin-top: calc(var(--app-header-height-actual) + var(--app-toolbar-height-actual, 0px));
+    }
+
+    // Footer
+    [data-app-footer-fixed-mobile='true'] & {
+      margin-bottom: var(--app-footer-height);
+    }
+  }
+}

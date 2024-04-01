@@ -10,6 +10,7 @@ import { subDays } from 'date-fns';
 import { useRouter } from 'next/router';
 import DashboardInfoAndGraph from '../../components/dashboard/infoAndGraph';
 import { MdArrowDropDown } from 'react-icons/md';
+import styles from '../dashboard/DashboardPage.module.scss';
 
 const style = css`
   button {
@@ -233,7 +234,7 @@ const DashboardPage = () => {
 
   return (
     <div>
-      <div id="adboardbox_wrap" className="adboardbox_wrap1">
+      <div id="adboardbox_wrap" className={styles.adboardbox_wrap}>
         <div id="DashboardHeader" className="adboardbox_search">
           <Filter />
         </div>
@@ -250,20 +251,20 @@ const DashboardPage = () => {
               chartData={chartData}
             />
           )}
-        <div className="set_table m-t-15" style={{ marginBottom: '30px' }}>
+        <div className={styles.set_table} style={{ marginTop: '5px' }}>
           <strong className="screen_out">캠페인 탭 내용</strong>
-          <div className="set_head">
+          <div className={styles.set_head}>
             <div className="f-right">
-              <div className="single_wrap">
-                <div className="opt_select">
-                  <a className="link_selected" onClick={() => setUserSettingColumnModalOn(true)}>
+              <div className={styles.single_wrap}>
+                <div className={styles.opt_select}>
+                  <a className={styles.link_selected} onClick={() => setUserSettingColumnModalOn(true)}>
                     열:{' '}
                     {typeof window !== 'undefined' && sessionStorage.getItem('myIndicatorItems') !== null
                       ? indicatorGroupNameToCommasStr()
                       : `비용 지표, 기본 지표`}
                   </a>
                   <span>
-                    <MdArrowDropDown className="ico_arr" />
+                    <MdArrowDropDown className={styles.ico_arr} />
                   </span>
                 </div>
               </div>

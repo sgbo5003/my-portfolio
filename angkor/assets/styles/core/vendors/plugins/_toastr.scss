@@ -1,0 +1,86 @@
+//
+// Toastr
+//
+
+// Base
+.toastr {
+  // this is for RTL
+  background-position: calc(100% - 1.5rem) center !important;
+  /*rtl:ignore*/
+  background-position: 1.5rem center !important;
+  box-shadow: var(--dropdown-box-shadow) !important;
+  border-radius: $dropdown-border-radius !important;
+  border: 0 !important;
+  background-color: var(--gray-100);
+  color: var(--gray-700);
+  padding: 1.25rem 1.25rem 1.25rem 4.5rem !important;
+
+  .toastr-close-button {
+    outline: none !important;
+    font-size: 0;
+    width: 0.85rem;
+    height: 0.85rem;
+  }
+
+  // Title
+  .toastr-title {
+    font-size: 1.15rem;
+    font-weight: $font-weight-semibold;
+
+    & + .toastr-message {
+      margin-top: 0.25rem;
+    }
+  }
+
+  // Message
+  .toastr-message {
+    font-size: 1rem;
+    font-weight: $font-weight-normal;
+  }
+
+  // States
+  &.toastr-success {
+    background-color: var(--success);
+    color: var(--success-inverse);
+
+    .toastr-close-button {
+      @include svg-bg-icon(close, var(--success-inverse));
+    }
+  }
+
+  &.toastr-info {
+    background-color: var(--info);
+    color: var(--info-inverse);
+
+    .toastr-close-button {
+      @include svg-bg-icon(close, var(--info-inverse));
+    }
+  }
+
+  &.toastr-warning {
+    background-color: var(--warning);
+    color: var(--warning-inverse);
+
+    .toastr-close-button {
+      @include svg-bg-icon(close, var(--warning-inverse));
+    }
+  }
+
+  &.toastr-error {
+    background-color: var(--danger);
+    color: var(--danger-inverse);
+
+    .toastr-close-button {
+      @include svg-bg-icon(close, var(--danger-inverse));
+    }
+  }
+}
+
+// Placements
+.toastr-top-center {
+  top: 12px;
+}
+
+.toastr-bottom-center {
+  bottom: 12px;
+}

@@ -1,0 +1,26 @@
+//
+//  Tooltip
+//
+
+// Base
+.tooltip {
+  --#{$prefix}tooltip-color: var(--tooltip-color);
+  --#{$prefix}tooltip-bg: var(--tooltip-bg);
+  --#{$prefix}tooltip-opacity: var(--tooltip-opacity);
+
+  .tooltip-inner {
+    box-shadow: var(--tooltip-box-shadow);
+  }
+
+  &.tooltop-auto-width {
+    .tooltip-inner {
+      white-space: nowrap;
+      max-width: none;
+    }
+  }
+
+  // Inverse
+  &.tooltip-inverse {
+    @include tooltip-theme($bg-color: var(--dark), $color: var(--dark-inverse), $arrow-color: var(--dark));
+  }
+}

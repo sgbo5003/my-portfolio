@@ -11,8 +11,10 @@
   },
   "dependencies": {
     "@table-library/react-table-library": "^4.1.7",
+    "axios": "^1.6.8",
     "bootstrap": "^5.3.3",
     "clone": "^2.1.2",
+    "clsx": "^2.1.0",
     "date-fns": "^3.3.1",
     "formik": "^2.4.5",
     "next": "14.1.3",
@@ -22,6 +24,7 @@
     "react-date-range": "^2.0.0-alpha.4",
     "react-dom": "^18",
     "react-icons": "^5.0.1",
+    "react-inlinesvg": "^4.1.3",
     "react-loading": "^2.0.3",
     "recharts": "^2.12.2",
     "sass": "^1.71.1",

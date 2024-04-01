@@ -170,9 +170,9 @@ const DashboardInfoAndGraph = (props: {
   });
 
   return (
-    <div className="adboardbox_top">
-      <div className="boardbox_tit">
-        <strong className="tit_box">
+    <div className={styles.adboardbox_top}>
+      <div className={styles.boardbox_tit}>
+        <strong className={styles.tit_box}>
           {summary?.includes('campaign') === true &&
           (String(summary).split('~')[1] === '' || String(summary).split('~')[1] == undefined)
             ? '전체 캠페인'
@@ -190,8 +190,8 @@ const DashboardInfoAndGraph = (props: {
             ? `[소재] 소재명`
             : `[광고계정] ${selectedAdAccount.name}`}
         </strong>
-        <div className="titcheck_box">
-          <span className="box_checkinp">
+        <div className={styles.titcheck_box}>
+          <span className={styles.box_checkinp + ' box_checkinp'}>
             <input
               type="checkbox"
               name="check|showInfo"
@@ -208,7 +208,7 @@ const DashboardInfoAndGraph = (props: {
               정보 보기
             </label>
           </span>
-          <span className="box_checkinp">
+          <span className={styles.box_checkinp + ' box_checkinp'}>
             <input
               type="checkbox"
               name="check|showGraph"
@@ -228,7 +228,7 @@ const DashboardInfoAndGraph = (props: {
         </div>
       </div>
       {showInfo && (
-        <div className="boardbox_card card_info">
+        <div className={styles.boardbox_card + ' ' + styles.card_info}>
           {/* <div className={styles.item_infosum + ' ' + styles.infosum_price}>
             <strong className={styles.tit_g}>비용</strong>
             <ul className={styles.list_infosum}>
@@ -272,7 +272,7 @@ const DashboardInfoAndGraph = (props: {
               (String(summary).split('~')[1] === '' || String(summary).split('~')[1] == undefined)) ||
             (summary?.includes('creative') === true &&
               (String(summary).split('~')[1] === '' || String(summary).split('~')[1] == undefined)) ? (
-              <div className="item_infosum infosum_price">
+              <div className={styles.item_infosum + ' ' + styles.infosum_price}>
                 {/* <strong className={styles.tit_g}>비용</strong>
                   <ul className={styles.list_infosum}>
                     <li>
@@ -283,16 +283,16 @@ const DashboardInfoAndGraph = (props: {
                 <div className="h-40"></div>
               </div>
             ) : summary?.includes('campaign') === true && String(summary).split('~')[1] !== '' ? (
-              <div className="item_infosum infosum_basic">
-                <strong className="tit_g">기본</strong>
-                <ul className="list_infosum">
+              <div className={styles.item_infosum + ' ' + styles.infosum_basic}>
+                <strong className={styles.tit_g}>기본</strong>
+                <ul className={styles.list_infosum}>
                   <li>
-                    <span className="subtit_g">ID</span>
-                    <p className="desc_g">1</p>
+                    <span className={styles.subtit_g}>ID</span>
+                    <p className={styles.desc_g}>1</p>
                   </li>
                   <li>
-                    <span className="subtit_g">유형</span>
-                    <p className="desc_g">디스플레이</p>
+                    <span className={styles.subtit_g}>유형</span>
+                    <p className={styles.desc_g}>디스플레이</p>
                   </li>
                 </ul>
               </div>
@@ -311,8 +311,8 @@ const DashboardInfoAndGraph = (props: {
                       </li>
                     </ul>
                   </div> */}
-                <div className="item_infosum infosum_manage">
-                  <strong className="tit_g">운영</strong>
+                <div className={styles.item_infosum + ' ' + styles.infosum_manage}>
+                  <strong className={styles.tit_g}>운영</strong>
                   <ul className={styles.list_infosum}>
                     <li>
                       <span className={styles.subtit_g}>캠페인</span>
@@ -541,7 +541,7 @@ const DashboardInfoAndGraph = (props: {
         </div>
       )}
       <a
-        className="btn_close"
+        className={styles.btn_close}
         onClick={() => {
           let routerPathStr = '';
           if (router.asPath.includes(`?summary=${summary}`)) {

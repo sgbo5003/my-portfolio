@@ -1,3 +1,9 @@
+#app_wrapper {
+  min-height: calc(100vh - 70px);
+}
+#app_content {
+  min-height: 740px;
+}
 .screen_out {
   overflow: hidden;
   position: absolute;

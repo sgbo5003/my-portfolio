@@ -1,0 +1,52 @@
+//
+// Popover
+//
+
+// Base
+.popover {
+  --#{$prefix}popover-bg: var(--popover-bg);
+  --#{$prefix}popover-border-color: var(--popover-border-color);
+  --#{$prefix}popover-box-shadow: var(--popover-box-shadow);
+  --#{$prefix}popover-header-color: var(--popover-header-color);
+  --#{$prefix}popover-header-bg: var(--popover-header-bg);
+  --#{$prefix}popover-body-color: var(--popover-body-color);
+  --#{$prefix}popover-arrow-border: var(--popover-bg);
+
+  .popover-header {
+    font-size: $popover-header-font-size;
+    font-weight: $popover-header-font-weight;
+    border-bottom: 1px solid var(--popover-header-border-color);
+  }
+
+  .popover-dismiss {
+    position: absolute;
+    top: $popover-dissmis-btn-top;
+    right: $popover-dissmis-btn-end;
+    height: $popover-dissmis-btn-height;
+    width: $popover-dissmis-btn-height;
+    @include svg-bg-icon(close, var(--gray-500)); // todo: revise
+    mask-size: 50%;
+    -webkit-mask-size: 50%;
+
+    &:hover {
+      background-color: var(--primary);
+    }
+
+    & + .popover-header {
+      padding-right: $popover-body-padding-x + $popover-dissmis-btn-height;
+    }
+  }
+}
+
+// Inverse
+.popover-inverse {
+  @include popover-theme(
+    $bg-color: var(--gray-900),
+    $border-color: var(--gray-800),
+    $header-bg-color: var(--gray-900),
+    $header-color: var(--gray-200),
+    $body-color: var(--gray-400),
+    $arrow-outer-color: var(--gray-100),
+    $arrow-color: var(--gray-900)
+  );
+}

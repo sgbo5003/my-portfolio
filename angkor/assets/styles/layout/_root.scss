@@ -1,0 +1,89 @@
+//
+// Root
+//
+
+// Light mode
+@include theme-light() {
+  // Reboot
+  --app-bg-color: #{$app-bg-color};
+  --app-blank-bg-color: #{$app-blank-bg-color};
+
+  // Header base
+  --app-header-base-bg-color: #{$app-header-base-bg-color};
+  --app-header-base-bg-color-mobile: #{$app-header-base-bg-color-mobile};
+  --app-header-base-box-shadow: #{$app-header-base-box-shadow};
+  --app-header-base-box-shadow-mobile: #{$app-header-base-box-shadow-mobile};
+  --app-header-base-menu-link-bg-color-active: #{$app-header-base-menu-link-bg-color-active};
+
+  // Header light
+  --app-header-light-separator-color: #{$app-header-light-separator-color};
+
+  // Sidebar base
+  --app-sidebar-base-toggle-btn-box-shadow: #{$app-sidebar-base-toggle-btn-box-shadow};
+  --app-sidebar-base-toggle-btn-bg-color: #{$app-sidebar-base-toggle-btn-bg-color};
+
+  // Sidebar light
+  --app-sidebar-light-bg-color: #{$app-sidebar-light-bg-color};
+  --app-sidebar-light-box-shadow: #{$app-sidebar-light-box-shadow};
+  --app-sidebar-light-separator-color: #{$app-sidebar-light-separator-color};
+  --app-sidebar-light-scrollbar-color: #{$app-sidebar-light-scrollbar-color};
+  --app-sidebar-light-scrollbar-color-hover: #{$app-sidebar-light-scrollbar-color-hover};
+  --app-sidebar-light-menu-heading-color: #{$app-sidebar-light-menu-heading-color};
+  --app-sidebar-light-menu-link-bg-color-active: #{$app-sidebar-light-menu-link-bg-color-active};
+  --app-sidebar-light-header-menu-link-bg-color-active: #{$app-sidebar-light-header-menu-link-bg-color-active};
+
+  // Toolbar base
+  --app-toolbar-base-bg-color: #{$app-toolbar-base-bg-color};
+  --app-toolbar-base-bg-color-mobile: #{$app-toolbar-base-bg-color-mobile};
+  --app-toolbar-base-box-shadow: #{$app-toolbar-base-box-shadow};
+  --app-toolbar-base-box-shadow-mobile: #{$app-toolbar-base-box-shadow-mobile};
+  --app-toolbar-base-border-top: #{$app-toolbar-base-border-top};
+  --app-toolbar-base-border-top-mobile: #{$app-toolbar-base-border-top-mobile};
+
+  // Footer
+  --app-footer-bg-color: #{$app-footer-bg-color};
+  --app-footer-bg-color-mobile: #{$app-footer-bg-color-mobile};
+}
+
+// Dark mode
+@include theme-dark() {
+  // Reboot
+  --app-bg-color: #{$app-bg-color-dark};
+  --app-blank-bg-color: #{$app-blank-bg-color-dark};
+
+  // Header base
+  --app-header-base-bg-color: #{$app-header-base-bg-color-dark};
+  --app-header-base-bg-color-mobile: #{$app-header-base-bg-color-mobile-dark};
+  --app-header-base-box-shadow: #{$app-header-base-box-shadow-dark};
+  --app-header-base-box-shadow-mobile: #{$app-header-base-box-shadow-mobile-dark};
+  --app-header-base-menu-link-bg-color-active: #{$app-header-base-menu-link-bg-color-active-dark};
+
+  // Header light
+  --app-header-light-separator-color: #{$app-header-light-separator-color-dark};
+
+  // Sidebar base
+  --app-sidebar-base-toggle-btn-box-shadow: #{$app-sidebar-base-toggle-btn-box-shadow-dark};
+  --app-sidebar-base-toggle-btn-bg-color: #{$app-sidebar-base-toggle-btn-bg-color-dark};
+
+  // Sidebar light
+  --app-sidebar-light-bg-color: #{$app-sidebar-light-bg-color-dark};
+  --app-sidebar-light-box-shadow: #{$app-sidebar-light-box-shadow-dark};
+  --app-sidebar-light-separator-color: #{$app-sidebar-light-separator-color-dark};
+  --app-sidebar-light-scrollbar-color: #{$app-sidebar-light-scrollbar-color-dark};
+  --app-sidebar-light-scrollbar-color-hover: #{$app-sidebar-light-scrollbar-color-hover-dark};
+  --app-sidebar-light-menu-heading-color: #{$app-sidebar-light-menu-heading-color-dark};
+  --app-sidebar-light-menu-link-bg-color-active: #{$app-sidebar-light-menu-link-bg-color-active-dark};
+  --app-sidebar-light-header-menu-link-bg-color-active: #{$app-sidebar-light-header-menu-link-bg-color-active-dark};
+
+  // Toolbar base
+  --app-toolbar-base-bg-color: #{$app-toolbar-base-bg-color-dark};
+  --app-toolbar-base-bg-color-mobile: #{$app-toolbar-base-bg-color-mobile-dark};
+  --app-toolbar-base-box-shadow: #{$app-toolbar-base-box-shadow-dark};
+  --app-toolbar-base-box-shadow-mobile: #{$app-toolbar-base-box-shadow-mobile-dark};
+  --app-toolbar-base-border-top: #{$app-toolbar-base-border-top-dark};
+  --app-toolbar-base-border-top-mobile: #{$app-toolbar-base-border-top-mobile-dark};
+
+  // Footer
+  --app-footer-bg-color: #{$app-footer-bg-color-dark};
+  --app-footer-bg-color-mobile: #{$app-footer-bg-color-mobile-dark};
+}

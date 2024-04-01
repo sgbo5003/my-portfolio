@@ -1,0 +1,15 @@
+.toast {
+  --#{$prefix}toast-color: var(--toast-color);
+  --#{$prefix}toast-bg: var(--toast-background-color);
+  --#{$prefix}toast-border-color: var(--toast-border-color);
+  --#{$prefix}toast-box-shadow: var(--toast-box-shadow);
+  --#{$prefix}toast-header-color: var(--toast-header-color);
+  --#{$prefix}toast-header-bg: var(--toast-header-background-color);
+  --#{$prefix}toast-header-border-color: var(--toast-header-border-color);
+
+  .toast-header {
+    .btn-close {
+      margin-right: 0;
+    }
+  }
+}

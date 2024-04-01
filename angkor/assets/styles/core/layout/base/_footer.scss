@@ -1,0 +1,92 @@
+//
+// Footer
+//
+
+// General mode
+.app-footer {
+  transition: $app-footer-transition;
+  display: flex;
+  align-items: stretch;
+}
+
+// Desktop mode
+@include media-breakpoint-up(lg) {
+  // Base
+  .app-footer {
+    @include property(z-index, $app-footer-z-index);
+
+    background-color: var(--app-footer-bg-color);
+    box-shadow: var(--app-footer-box-shadow);
+    border-top: var(--app-footer-border-top);
+  }
+
+  // Vars
+  :root {
+    --app-footer-height: #{$app-footer-height};
+  }
+
+  // States
+  .app-footer {
+    height: var(--app-footer-height);
+
+    [data-app-footer-fixed='true'] & {
+      @include property(z-index, $app-footer-fixed-z-index);
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+
+  // Integration
+  .app-footer {
+    // Sidebar
+    [data-app-sidebar-fixed='true'][data-app-sidebar-push-footer='true'] & {
+      left: calc(var(--app-sidebar-width) + var(--app-sidebar-gap-start, 0px) + var(--app-sidebar-gap-end, 0px));
+    }
+
+    // Sidebar Panel
+    [data-app-sidebar-panel-fixed='true'][data-app-sidebar-panel-push-footer='true'] & {
+      left: calc(
+        var(--app-sidebar-width) + var(--app-sidebar-gap-start, 0px) + var(--app-sidebar-gap-end, 0px) +
+          var(--app-sidebar-panel-width) + var(--app-sidebar-panel-gap-start, 0px) +
+          var(--app-sidebar-panel-gap-end, 0px)
+      );
+    }
+
+    // Aside
+    [data-app-aside-fixed='true'][data-app-aside-push-footer='true'] & {
+      right: calc(var(--app-aside-width) + var(--app-aside-gap-start, 0px) + var(--app-aside-gap-end, 0px));
+    }
+  }
+}
+
+// Tablet & mobile modes
+@include media-breakpoint-down(lg) {
+  // Base
+  .app-footer {
+    @include property(z-index, $app-footer-z-index-mobile);
+
+    background-color: var(--app-footer-bg-color-mobile);
+    box-shadow: var(--app-footer-box-shadow-mobile);
+    border-top: var(--app-footer-border-top-mobile);
+  }
+
+  // Vars
+  body {
+    --app-footer-height: #{$app-footer-height-mobile};
+  }
+
+  // States
+  .app-footer {
+    height: var(--app-footer-height);
+
+    [data-app-footer-fixed-mobile='true'] & {
+      @include property(z-index, $app-footer-fixed-z-index-mobile);
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
+  }
+}

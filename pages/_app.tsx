@@ -1,11 +1,10 @@
-// import '@styles/common.scss';
 import '../styles/globals.scss';
-import { ReactElement, ReactNode } from 'react';
+import '@styles/common.scss';
+import { ReactElement, ReactNode, Suspense } from 'react';
 import type { NextPage } from 'next';
 import type { AppProps } from 'next/app';
-import Image from 'next/image';
-import img2 from '../public/assets/images/메인사진.png';
-import SpecialMenuComponent from '../components/header';
+import { LayoutProvider, LayoutSplashScreen } from '../angkor/layout/core';
+import { AuthInit, AuthProvider } from '../components/auth';
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -19,13 +18,15 @@ function MyApp({ Component, pageProps }: AppPropsWithLayout) {
   // const Layout = Component.Layout || ((children: ReactElement) => <>{children}</>)
 
   return (
-    <div className="home_body">
-      <div className="front_img">
-        <Image src={img2} alt="메인이미지" height="204" width="1080" />
-      </div>
-      <SpecialMenuComponent />
-      <Component {...pageProps} />
-    </div>
+    <Suspense fallback={<LayoutSplashScreen />}>
+      <AuthProvider>
+        <LayoutProvider>
+          <AuthInit>
+            <Component {...pageProps} />
+          </AuthInit>
+        </LayoutProvider>
+      </AuthProvider>
+    </Suspense>
   );
 }
 
