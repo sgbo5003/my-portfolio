@@ -45,7 +45,7 @@ const HeaderWrapper = () => {
             {/* <Link href="#"> */}
             <a
               onClick={() => {
-                router.push('/businessAccount/all');
+                router.push('/dashboard');
                 sessionStorage.removeItem('myAdAccountInfo');
                 sessionStorage.removeItem('selectedAdAccount');
               }}
